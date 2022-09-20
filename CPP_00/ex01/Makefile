@@ -6,7 +6,7 @@
 #    By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 18:29:51 by lduboulo          #+#    #+#              #
-#    Updated: 2022/09/19 16:56:47 by lduboulo         ###   ########.fr        #
+#    Updated: 2022/09/20 16:19:40 by lduboulo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ RESET	= \033[0m
 
 
 SRCS_DIR		= .
-SRCS_FILES		= megaphone.cpp
+SRCS_FILES		= main.cpp PhoneBook.cpp Contact.cpp
 
 SRCS			= ${patsubst %, ${SRCS_DIR}%, ${SRCS_FILES}}
 
@@ -34,7 +34,7 @@ OBJS_FILES		:= ${SRCS_FILES:.cpp=.o}
 
 OBJS			:= ${patsubst %, ${O_DIR}%, ${OBJS_FILES}}
 
-NAME			= megaphone
+NAME			= phoneBook
 
 CC				= c++
 AR				= ar rcs
