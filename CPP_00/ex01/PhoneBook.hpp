@@ -6,15 +6,16 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:19:08 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/09/20 16:32:18 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/09/20 18:07:58 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
+# include <sstream>
 
 /*
  * Classes Definition
@@ -49,10 +50,12 @@ class phoneBook
 		int		i;
 	public:
 		phoneBook();
-		int		getContactNbr(void);
-		void	contact_n(void);
-		void	add_contact(int i);
-		void	search_contact(void);
+		std::string	stringFormat(std::string str);
+		void		printPhoneBook(void);
+		int			getContactNbr(void);
+		void		contact_n(void);
+		void		add_contact(int i);
+		void		search_contact(void);
 };
 
 /*
