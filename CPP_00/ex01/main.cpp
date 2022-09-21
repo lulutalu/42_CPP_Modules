@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 16:18:57 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/09/20 18:07:57 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/09/21 15:06:34 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ int	main(int argc, char **argv)
 	}
 	while (1)
 	{
-		std::cin >> input;
+		std::cout << "PhoneBook > ";
+		input.clear();
+		while (input.length() == 0)
+			std::getline(std::cin, input);
 		if (input.compare("EXIT") == 0)
 			return (0);
 		else if (input.compare("ADD") == 0)

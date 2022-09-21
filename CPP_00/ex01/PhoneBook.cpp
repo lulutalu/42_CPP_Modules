@@ -6,19 +6,19 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:18:46 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/09/20 18:07:56 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/09/21 15:39:19 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 void	phoneBook::add_contact(int i)
-{
-	
+{	
 	std::string	str;
 
 	std::cout << "---------------------------------------------" << std::endl;
-	std::cout << "||||       Creation of new contact      |||||" << std::endl;
+	std::cout << "|          Creation of new contact          |" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << "|     First Name : ";
 	while (str.length() == 0)
 		std::getline(std::cin, str);
@@ -43,7 +43,8 @@ void	phoneBook::add_contact(int i)
 	while (str.length() == 0)
 		std::getline(std::cin, str);
 	Book[i].setDarkestSecret(str);
-	std::cout << "||||     Contact creation please wait    ||||" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "|           Contact creation over           |" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
 }
 
@@ -67,15 +68,17 @@ void	phoneBook::printPhoneBook(void)
 	int			n = 0;
 	std::string	str;
 
-	str = Book[n].getFirstName();
 	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << "|  Index   |First Name| Last Name| Nickname |" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
-	while (!str.empty())
+	while (n < 8)
 	{
+		if (Book[n].getFirstName().empty())
+			break ;
 		std::cout << "|         ";
 		std::cout << n + 1;
 		std::cout << "|";
+		str = Book[n].getFirstName();
 		std::cout << stringFormat(str);
 		std::cout << "|";
 		str = Book[n].getLastName();
@@ -85,7 +88,38 @@ void	phoneBook::printPhoneBook(void)
 		std::cout << stringFormat(str);
 		std::cout << "|" << std::endl;
 		n++;
-		str = Book[n].getFirstName();
+		std::cout << "---------------------------------------------" << std::endl;
+	}
+}
+
+void	phoneBook::printContactInformation(int n)
+{
+	std::string	str;
+
+	str = Book[n - 1].getFirstName();
+	if (str.empty())
+		std::cout << "Can't find this contact\n" << std::endl;
+	else
+	{
+		std::cout << "---------------------------------------------" << std::endl;
+		std::cout << "|             Contact number ";
+		std::cout << n;
+		std::cout << "              |" << std::endl;
+		std::cout << "---------------------------------------------" << std::endl;
+		std::cout << "| First Name : ";
+		std::cout << str << std::endl;
+		std::cout << "| Last Name : ";
+		str = Book[n - 1].getLastName();
+		std::cout << str << std::endl;
+		std::cout << "| Nickname : ";
+		str = Book[n - 1].getNickname();
+		std::cout << str << std::endl;
+		std::cout << "| Phone Number : ";
+		str = Book[n - 1].getPhoneNumber();
+		std::cout << str << std::endl;
+		std::cout << "| Darkest Secret : ";
+		str = Book[n - 1].getDarkestSecret();
+		std:: cout << str << std::endl;
 		std::cout << "---------------------------------------------" << std::endl;
 	}
 }
@@ -93,21 +127,22 @@ void	phoneBook::printPhoneBook(void)
 void	phoneBook::search_contact(void)
 {
 	std::string	str;
-	const char	*str_c;
-	int			i;
+	int			n;
 
-	str = Book[0].getFirstName();
-	if (str.empty())
+	if (getContactNbr() == 0 && Book[0].getFirstName().empty())
 		std::cout << "Please add a contact first" << std::endl;
 	else
 	{
 		printPhoneBook();
+		str.clear();
 		std::cout << "Please insert the index number of the contact : ";
-		std::getline(std::cin, str);
-		if (i >= 1 && i <= 8)
-			printContactInformation(i);
+		while (str.length() == 0)
+			std::getline(std::cin, str);
+		std::stringstream(str) >> n;
+		if (n >= 1 && n <= 8)
+			printContactInformation(n);
 		else
-			std::cout 
+			std::cout << "Can't find this contact" << std::endl;
 	}
 }
 
@@ -126,4 +161,11 @@ void	phoneBook::contact_n(void)
 phoneBook::phoneBook(void)
 {
 	i = 0;
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "|       Welcome to my awesome PhoneBook     |" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "| To add a contact : ADD (maximum 8)        |" << std::endl;
+	std::cout << "| To see your list of contact : SEARCH      |" << std::endl;
+	std::cout << "| To exit the PhoneBook : EXIT              |" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 }
