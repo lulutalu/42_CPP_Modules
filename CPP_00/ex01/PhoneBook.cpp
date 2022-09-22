@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:18:46 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/09/21 16:40:24 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/09/22 16:05:58 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void	phoneBook::printContactInformation(int n)
 /*Also resize the string if it exceeds 10 characters*/
 std::string	phoneBook::stringFormat(std::string str)
 {
-	if (str.length() >= 10)
+	if (str.length() > 10)
 	{
 		str.resize(9);
 		str.append(".");

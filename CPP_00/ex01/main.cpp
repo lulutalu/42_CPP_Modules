@@ -6,11 +6,12 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 16:18:57 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/09/21 16:38:50 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/09/22 16:09:18 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 int	main(int argc, char **argv)
 {
