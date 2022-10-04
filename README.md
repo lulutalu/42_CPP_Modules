@@ -13,10 +13,12 @@ We no longer are forced to code in compliance with the norm. But we're encourage
 
 ## CPP_01
 
+<br>
 <p align="center"><a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cl2668aqb008909jp0ecnecpa/project/2805503" alt="lduboulo's 42 CPP Module 01 Score" /></a></p>
 
 ## CPP_02
 
+<br>
 <p align="center"<<a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cl2668aqb008909jp0ecnecpa/project/2818731" alt="lduboulo's 42 CPP Module 02 Score" /></a></p>
 
 ## CPP_03
