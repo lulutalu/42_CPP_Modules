@@ -6,7 +6,7 @@
 #    By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 18:29:51 by lduboulo          #+#    #+#              #
-#    Updated: 2022/10/04 20:17:33 by lduboulo         ###   ########.fr        #
+#    Updated: 2022/10/05 15:23:11 by lduboulo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ RESET	= \033[0m
 
 
 SRCS_DIR		= .
-SRCS_FILES		= main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRCS_FILES		= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 SRCS			= ${patsubst %, ${SRCS_DIR}%, ${SRCS_FILES}}
 
