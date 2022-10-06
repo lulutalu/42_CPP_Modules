@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 20:57:47 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/10/05 19:05:32 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/10/05 21:19:44 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ Dog	&Dog::operator = (const Dog &assign)
 {
 	std::cout << "Assignement operator overload of Dog called" << std::endl;
 	this->type = assign.getType();
-	this->_brain = assign._brain;
+	delete this->_brain;
+	this->_brain = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->_brain->setIdea(assign._brain->getIdea(i), i);
 	return (*this);
 }
 

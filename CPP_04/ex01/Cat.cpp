@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 20:37:24 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/10/05 17:52:48 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/10/05 21:19:44 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ Cat	&Cat::operator = (const Cat &assign)
 {
 	std::cout << "Assignement operator overload of Cat called" << std::endl;
 	this->type = assign.getType();
-	this->_brain = assign._brain;
+	delete this->_brain;
+	this->_brain = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->_brain->setIdea(assign._brain->getIdea(i), i);
 	return (*this);
 }
 
