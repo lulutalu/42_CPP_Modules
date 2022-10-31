@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:48:33 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/10/28 19:23:47 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/10/31 18:12:38 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,20 @@ void		Bureaucrat::decrementGrade(void)
 	catch (std::exception &except)
 	{
 		std::cout << except.what() << std::endl;
+	}
+}
+
+void		Bureaucrat::signForm(Form &obj)
+{
+	if (obj.isSigned() == true)
+		std::cout << "Bureaucrat " << this->getName() << " couldn't signed Form " << obj.getName() << " because it's already signed" << std::endl;
+	else
+	{
+		obj.beSigned(*this);
+		if (obj.isSigned() == true)
+			std::cout << "Bureaucrat " << this->getName() << " signed Form " << obj.getName() << std::endl;
+		else
+			std::cout << "Bureaucrat " << this->getName() << " couldn't signed Form " << obj.getName() << " because is grade is not sufficient" << std::endl;
 	}
 }
 
