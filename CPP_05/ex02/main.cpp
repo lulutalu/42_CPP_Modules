@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:36:54 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/10/31 18:14:21 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:47:35 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	main()
 	Bureaucrat	B3("Yvvves", 45);
 
 	PresidentialPardonForm	F1("Corne-Muse");
-	RobotomyRequestForm			F2("Sans-Chaise");
-	ShrubberyCreationForm		F3("DIRECTORY");
+	ShrubberyCreationForm	F2("DIRECTORY");
+	RobotomyRequestForm		F3("Sans-Chaise");
 
 	std::cout << "Trying to execute all forms without signing them before hand" << std::endl << std::endl;
 

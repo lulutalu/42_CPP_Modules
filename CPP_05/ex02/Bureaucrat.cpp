@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:48:33 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/10/31 18:12:38 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:46:14 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,10 +117,7 @@ void		Bureaucrat::signForm(Form &obj)
 void		Bureaucrat::executeForm(Form const &obj)
 {
 	if (this->getGrade() <= obj.getExecGrade())
-	{
 		obj.execute(*this);
-		std::cout << this->getName() << " successfully executed " << obj.getName() << std::endl;
-	}
 	else
 		std::cout << "Error ! " << this->getName() << " grade is insufficient to execute " << obj.getName() << std::endl;
 }

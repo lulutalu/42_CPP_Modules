@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 19:27:38 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/10/31 18:14:22 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:45:54 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,13 @@ std::string			PresidentialPardonForm::getTarget(void) const
 	return (this->_target);
 }
 
-void						PresidentialPardonForm::execute(Bureaucrat const &executor) const
+void				PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	if (this->isSigned())
+	{
 		std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox on the order of " << executor.getName()<< std::endl;
+		std::cout << executor.getName() << " successfully executed " << this->getName() << std::endl;
+	}
 	else if (!this->isSigned())
 		std::cout << "Error ! The form has not been signed yet" << std::endl;
 }
