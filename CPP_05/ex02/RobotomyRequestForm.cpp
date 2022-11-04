@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 19:27:38 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/11/02 17:49:19 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/04 13:41:55 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ std::string			RobotomyRequestForm::getTarget(void) const
 
 void						RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
+	srand(time(NULL));
 	if (this->isSigned())
 	{
 		std::cout << "DRRRRRrrrrrrrrrrrrrr" << std::endl;

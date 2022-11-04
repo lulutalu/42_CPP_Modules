@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 19:27:38 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/10/31 18:14:22 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/04 13:41:56 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <string>
 # include <iostream>
+# include <cstdlib>
+# include <ctime>
 
 # include "Form.hpp"
 
