@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 12:47:30 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/11/03 19:19:39 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/04 09:35:38 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	main(int argc, char **argv)
 			<< "float: nanf" << std::endl << "double: nan" << std::endl;
 		return (0);
 	}
+	c.stringModifier(argv[1]);
 	if (c.stringToInt(argv[1])) {
 		std::cout << "char: Non displayable" << std::endl << "int: impossible" << std::endl;
 	}

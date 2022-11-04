@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 13:11:51 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/11/03 19:19:37 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/04 10:13:18 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,16 @@ bool	Conversion::isStringInf(char *str)
 		return (true);
 	return (false);
 }
+
+void	Conversion::stringModifier(char *str)
+{
+	int	i = 0;
+
+	while (i < (int)strlen(str) - 1)
+		i++;
+	if (str[i] == 'f')
+		str[i] = '\0';
+}
 ////////////////////////////////////////////////////////////////////////////////
 //								Conversion Functions					  	  //
 ////////////////////////////////////////////////////////////////////////////////
@@ -110,42 +120,22 @@ int		Conversion::stringToInt(char *str)
 
 int		Conversion::stringToFloat(char *str)
 {
-	float	res;
-	double	checker;
+	float				res;
+	std::stringstream	ss;
 
-	{
-		std::stringstream	ss;
-		ss.str(str);
-		ss >> checker;
-	}
-	if (checker > std::numeric_limits<float>::max() || checker < std::numeric_limits<float>::min())
-		return (1);
-	{
-		std::stringstream	ss;
-		ss.str(str);
-		ss >> res;
-	}
+	ss.str(str);
+	ss >> res;
 	this->setFloat(res);
 	return (0);
 }
 
 int		Conversion::stringToDouble(char *str)
 {
-	double		res;
-	long double	checker;
+	double				res;
+	std::stringstream	ss;
 
-	{
-		std::stringstream	ss;
-		ss.str(str);
-		ss >> checker;
-	}
-	if (checker > std::numeric_limits<double>::max() || checker < std::numeric_limits<double>::min())
-		return (1);
-	{
-		std::stringstream	ss;
-		ss.str(str);
-		ss >> res;
-	}
+	ss.str(str);
+	ss >> res;
 	this->setDouble(res);
 	return (0);
 }
