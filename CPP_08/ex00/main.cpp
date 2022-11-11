@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 16:50:18 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/11/11 17:09:45 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/11 17:37:21 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,14 @@ int	main(void)
 	std::cout << "Searching for a number inside the vector container" << std::endl;
 	std::cout << easyfind(myVector, 50) << std::endl;
 
+	std::cout << "Searching for the last number inside the vector container" << std::endl;
+	std::cout << easyfind(myVector, 22) << std::endl;
+
+/****************************************************************************************/
+
 	std::cout << std::endl << std::endl;
+
+/****************************************************************************************/
 
 	std::list<int>		myList;
 
@@ -44,6 +51,9 @@ int	main(void)
 	std::cout << "Searching for a number not inside the list container" << std::endl;
 	std::cout << easyfind(myList, 2) << std::endl;
 
-	std::cout << "searching for a number inside the list container" << std::endl;
+	std::cout << "Searching for a number inside the list container" << std::endl;
 	std::cout << easyfind(myList, 47) << std::endl;
+
+	std::cout << "Searching for the last number inside the list container" << std::endl;
+	std::cout << easyfind(myList, 1) << std::endl;
 }
