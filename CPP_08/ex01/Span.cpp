@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:40:10 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/11/14 17:44:04 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/14 18:30:29 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,19 @@ void		Span::addNumber(int newNumber) {
 	}
 }
 
-void		Span::insert(int _range) {
-	srand(time(NULL));
-	while (this->_nb < this->_max)
-		this->addNumber(rand() % _range);
+void		Span::insert(int first, int last) {
+	try {
+		if (last - first > this->_max - this->_nb)
+			throw Span::SpanObjectFull();
+		else {
+			while (first < last)
+				addNumber(first++);
+			std::random_shuffle(this->_vec.begin(), this->_vec.end());
+		}
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 }
 
 int			Span::shortestSpan(void) const {

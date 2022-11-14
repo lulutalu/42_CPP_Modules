@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:40:14 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/11/14 17:38:55 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/14 18:30:29 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Span
 		Span(unsigned int nb);
 
 		void	addNumber(int newNumber);
-		void	insert(int _range);
+		void	insert(int first, int last);
 
 		int		shortestSpan(void) const;
 		int		longestSpan(void) const;
