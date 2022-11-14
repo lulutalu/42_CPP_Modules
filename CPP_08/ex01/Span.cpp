@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:40:10 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/11/14 16:14:41 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:42:11 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,20 @@ void		Span::addNumber(int newNumber) {
 			throw Span::SpanObjectFull();
 		else
 			this->_vec[this->_nb++] = newNumber;
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+}
+
+void		Span::insert(int n, int value) {
+	try {
+		if (this->_nb + n > this->_max)
+			throw Span::SpanObjectFull();
+		else {
+			while (n-- > 0)
+				this->_vec[this->_nb++] = value;
+		}
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
@@ -90,6 +104,13 @@ int			Span::longestSpan(void) const {
 		std::cout << e.what() << std::endl;
 	}
 	return (0);
+}
+////////////////////////////////////////////////////////////////////////////////
+//								Extras										////
+////////////////////////////////////////////////////////////////////////////////
+void		Span::display(void) {
+	for (std::vector<int>::iterator it = this->_vec.begin(); it != this->_vec.end(); it++)
+		std::cout << *it << " ";
 }
 ////////////////////////////////////////////////////////////////////////////////
 //								Exceptions									////

@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:40:14 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/11/14 16:14:40 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:42:12 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,7 @@ class Span
 		Span(unsigned int nb);
 
 		void	addNumber(int newNumber);
-
-		class SpanObjectFull : public std::exception {
-			const char *what() const throw();
-		};
+		void	insert(int n, int value);
 
 		int		shortestSpan(void) const;
 		int		longestSpan(void) const;
@@ -44,6 +41,12 @@ class Span
 		class NotEnoughNumber : public std::exception {
 			const char *what() const throw();
 		};
+
+		class SpanObjectFull : public std::exception {
+			const char *what() const throw();
+		};
+
+		void	display(void);
 };
 
 #endif
