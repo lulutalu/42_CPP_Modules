@@ -6,12 +6,15 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:40:10 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/11/14 15:15:03 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:14:41 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
+////////////////////////////////////////////////////////////////////////////////
+//								Canonical Form								////
+////////////////////////////////////////////////////////////////////////////////
 Span::Span(void) : _vec(0), _nb(0), _max(0) {}
 
 Span::Span(unsigned int nb) : _vec(nb), _nb(0), _max(nb) {}
@@ -30,7 +33,9 @@ Span		*Span::operator = (const Span &assign) {
 	this->_max = assign._max;
 	return (this);
 }
-
+////////////////////////////////////////////////////////////////////////////////
+//								Vector operation							////
+////////////////////////////////////////////////////////////////////////////////
 void		Span::addNumber(int newNumber) {
 	try {
 		if (this->_nb == this->_max)
@@ -68,6 +73,27 @@ int			Span::shortestSpan(void) const {
 	return (0);
 }
 
+int			Span::longestSpan(void) const {
+	try {
+		if (this->_nb < 2)
+			throw Span::NotEnoughNumber();
+		else {
+			int	max_value;
+			int	min_value;
+
+			max_value = *std::max_element(this->_vec.begin(), this->_vec.begin() + this->_nb);
+			min_value = *std::min_element(this->_vec.begin(), this->_vec.begin() + this->_nb);
+			return (max_value - min_value);
+		}
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+	return (0);
+}
+////////////////////////////////////////////////////////////////////////////////
+//								Exceptions									////
+////////////////////////////////////////////////////////////////////////////////
 const char	*Span::NotEnoughNumber::what(void) const throw() {
 	return ("Not enough numbers to return a result");
 }
