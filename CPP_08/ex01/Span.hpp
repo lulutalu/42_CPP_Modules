@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:40:14 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/11/14 16:42:12 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/14 17:38:55 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <iterator>
 # include <algorithm>
 # include <iostream>
+# include <cstdlib>
+# include <ctime>
 
 class Span
 {
@@ -33,7 +35,7 @@ class Span
 		Span(unsigned int nb);
 
 		void	addNumber(int newNumber);
-		void	insert(int n, int value);
+		void	insert(int _range);
 
 		int		shortestSpan(void) const;
 		int		longestSpan(void) const;

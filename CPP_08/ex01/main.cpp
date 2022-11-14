@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 18:51:38 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/11/14 16:44:18 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/14 17:44:05 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void)
 
 	std::cout << "Trying to add number in a 0 size container" << std::endl;
 	zero.addNumber(34);
-	zero.insert(2, 27);
+	zero.insert(10);
 
 	std::cout << "---------------------------------------------------------" << std::endl;
 
@@ -64,17 +64,12 @@ int	main(void)
 
 	Span	bigBoy(50000);
 
-	bigBoy.insert(10000, -590);
-	bigBoy.insert(5000, 120);
-	bigBoy.insert(10000, 55);
-	bigBoy.insert(5000, 1928);
-	bigBoy.insert(10000, 984236);
-	bigBoy.insert(10000, 87);
+	bigBoy.insert(10000000);
 
-	std::cout << "Shortest Span should be 0 due to similar number" << std::endl;
+	std::cout << "Shortest Span" << std::endl;
 	std::cout << bigBoy.shortestSpan() << std::endl;
 
-	std::cout << "Longest Span should be 984236 - (-590) so 984'826" << std::endl;
+	std::cout << "Longest Span" << std::endl;
 	std::cout << bigBoy.longestSpan() << std::endl;
 
 	std::cout << std::endl <<"This container is now full but let's try to add more numbers" << std::endl;
