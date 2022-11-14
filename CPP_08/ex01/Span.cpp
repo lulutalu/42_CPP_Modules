@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:40:10 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/11/11 21:05:45 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/14 15:15:03 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,8 @@ void		Span::addNumber(int newNumber) {
 	try {
 		if (this->_nb == this->_max)
 			throw Span::SpanObjectFull();
-		else {
-
-			std::vector<int>::iterator	it;
-
-			it = this->_vec.end();
-			this->_vec.insert(it, newNumber);
-			this->_nb++;
-		}
+		else
+			this->_vec[this->_nb++] = newNumber;
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
@@ -54,10 +48,18 @@ int			Span::shortestSpan(void) const {
 		if (this->_nb < 2)
 			throw Span::NotEnoughNumber();
 		else {
-			std::vector<int>	temp = this->_vec;
+			std::vector<int>			temp(this->_vec);
+			int							short_span;
 
-			std::sort(temp.begin(), temp.begin() + this->_nb - 1);
-			return (*temp.begin() + 1 - *temp.begin());
+			std::sort(temp.begin(), temp.begin() + this->_nb);
+			short_span = temp[1] - temp[0];
+			for (int i = 1; i < this->_nb; i++) {
+				if (i + 1 < this->_nb) {
+					if (temp[i + 1] - temp[i] < short_span)
+						short_span = temp[i + 1] - temp[i];
+				}
+			}
+			return (short_span);
 		}
 	}
 	catch (std::exception &e) {
