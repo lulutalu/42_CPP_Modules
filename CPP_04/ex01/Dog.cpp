@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 20:57:47 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/10/05 21:19:44 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:07:18 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ Dog::~Dog(void)
 Dog::Dog(const Dog &copy)
 {
 	std::cout << "Copy Constructor of Dog called" << std::endl;
+	this->_brain = NULL;
 	*this = copy;
 }
 
@@ -36,7 +37,8 @@ Dog	&Dog::operator = (const Dog &assign)
 {
 	std::cout << "Assignement operator overload of Dog called" << std::endl;
 	this->type = assign.getType();
-	delete this->_brain;
+	if (this->_brain != NULL)
+		delete this->_brain;
 	this->_brain = new Brain();
 	for (int i = 0; i < 100; i++)
 		this->_brain->setIdea(assign._brain->getIdea(i), i);
