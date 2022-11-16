@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 21:00:28 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/10/05 19:26:04 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:30:14 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ class Aanimal
 {
 	protected:
 		std::string	type;
-	public:
 		Aanimal(void);
-		virtual ~Aanimal(void);
 		Aanimal(const Aanimal &copy);
+	public:
+		virtual ~Aanimal(void);
 		Aanimal	&operator = (const Aanimal &assign);
 
 		std::string		getType(void) const;

@@ -6,7 +6,7 @@
 /*   By: lduboulo <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 20:56:59 by lduboulo          #+#    #+#             */
-/*   Updated: 2022/10/05 19:25:49 by lduboulo         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:29:38 by lduboulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "Animal.hpp"
 # include "Brain.hpp"
 
-class Dog : public Aanimal
+class Dog : virtual public Aanimal
 {
 	private:
 		Brain	*_brain;
