@@ -28,3 +28,7 @@ We no longer are forced to code in compliance with the norm. But we're encourage
 <p align="center"><a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cl2668aqb008909jp0ecnecpa/project/2823469" alt="lduboulo's 42 CPP Module 03 Score" /></a></p>
 
 ## CPP_04
+
+
+<br>
+<p align="center"><a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cl2668aqb008909jp0ecnecpa/project/2857432" alt="lduboulo's 42 CPP Module 04 Score" /></a></p>
