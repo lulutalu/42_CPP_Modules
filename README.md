@@ -44,3 +44,15 @@ We no longer are forced to code in compliance with the norm. But we're encourage
 
 <br>
 <p align="center"><a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cl2668aqb008909jp0ecnecpa/project/2881762" alt="lduboulo's 42 CPP Module 06 Score" /></a></p>
+
+## CPP_07
+
+
+<br>
+<p align="center"><a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cl2668aqb008909jp0ecnecpa/project/2883372" alt="lduboulo's 42 CPP Module 07 Score" /></a></p>
+
+## CPP_08
+
+
+<br>
+<p align="center"><a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cl2668aqb008909jp0ecnecpa/project/2883680" alt="lduboulo's 42 CPP Module 08 Score" /></a></p>
